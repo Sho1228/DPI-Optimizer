@@ -1,6 +1,6 @@
 # Mouse Sensitivity Tester
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)\n
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)<br>
 A Python application created to help users find their optimal mouse sensitivity by testing reaction time and accuracy with delayed mouse cursor movement.
 
 ## Features
