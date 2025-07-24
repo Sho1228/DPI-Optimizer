@@ -1,6 +1,6 @@
 # Mouse Sensitivity Tester
 
-A Python application designed to help users find their optimal mouse sensitivity by testing reaction time and accuracy with delayed mouse cursor movement.
+A Python application created to help users find their optimal mouse sensitivity by testing reaction time and accuracy with delayed mouse cursor movement.
 
 ## Features
 
@@ -79,10 +79,3 @@ The program will launch in fullscreen mode. Click on the white circles as they a
 - Python 3.6+
 - Pygame library
 - Display capable of 1920x1080 resolution (adjustable in code)
-
-## Tips
-
-- Use this tool to test sensitivity settings before applying them to games
-- Higher delays simulate network lag or input lag scenarios
-- Smaller circles help train precision aiming
-- Track your accuracy over time to measure improvement
