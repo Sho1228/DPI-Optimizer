@@ -33,10 +33,10 @@ The program will launch in fullscreen mode. Click on the white circles as they a
 | Key | Action |
 |-----|--------|
 | `S` | Toggle settings panel |
-| `+` / `=` | Increase circle size |
-| `-` | Decrease circle size |
-| `↑` | Increase mouse delay |
-| `↓` | Decrease mouse delay |
+| `Q` | Increase circle size |
+| `A` | Decrease circle size |
+| `W` | Increase mouse delay |
+| `Z` | Decrease mouse delay |
 | `R` | Reset statistics |
 | `ESC` | Exit application |
 

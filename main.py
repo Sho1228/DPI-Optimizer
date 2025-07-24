@@ -33,7 +33,7 @@ class MouseSensitivityTester:
         self.total_spawns = 0
         self.show_settings = False
         
-        pygame.mouse.set_visible(True)
+        pygame.mouse.set_visible(False)
         
     def handle_events(self):
         for event in pygame.event.get():
@@ -44,13 +44,13 @@ class MouseSensitivityTester:
                     self.running = False
                 elif event.key == pygame.K_s:
                     self.show_settings = not self.show_settings
-                elif event.key == pygame.K_PLUS or event.key == pygame.K_EQUALS:
+                elif event.key == pygame.K_q:
                     self.circle_radius = min(100, self.circle_radius + 5)
-                elif event.key == pygame.K_MINUS:
+                elif event.key == pygame.K_a:
                     self.circle_radius = max(5, self.circle_radius - 5)
-                elif event.key == pygame.K_UP:
+                elif event.key == pygame.K_w:
                     self.mouse_delay = min(2.0, self.mouse_delay + 0.1)
-                elif event.key == pygame.K_DOWN:
+                elif event.key == pygame.K_z:
                     self.mouse_delay = max(0.0, self.mouse_delay - 0.1)
                 elif event.key == pygame.K_r:
                     self.hits = 0
@@ -104,11 +104,15 @@ class MouseSensitivityTester:
         if self.show_settings:
             font = pygame.font.Font(None, 36)
             settings_text = [
-                f"Circle Size: {self.circle_radius} (±/- to change)",
-                f"Mouse Delay: {self.mouse_delay:.1f}s (‘/“ to change)",
+                f"Circle Size: {self.circle_radius} (Q/A to change)",
+                f"Mouse Delay: {self.mouse_delay:.1f}s (W/Z to change)",
                 f"Hits: {self.hits}/{self.total_spawns} ({(self.hits/max(1,self.total_spawns)*100):.1f}%)",
                 "",
                 "Controls:",
+                "Q - Increase circle size",
+                "A - Decrease circle size", 
+                "W - Increase mouse delay",
+                "Z - Decrease mouse delay",
                 "S - Toggle settings",
                 "R - Reset stats",
                 "ESC - Exit"
