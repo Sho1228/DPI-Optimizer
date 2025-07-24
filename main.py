@@ -22,6 +22,7 @@ class MouseSensitivityTester:
         self.next_spawn_delay = random.uniform(1.0, 3.0)
         
         self.mouse_delay = 0.5
+        self.circle_timeout = 2.0
         self.mouse_positions = deque(maxlen=1000)
         self.delayed_mouse_pos = (0, 0)
         
@@ -52,6 +53,10 @@ class MouseSensitivityTester:
                     self.mouse_delay = min(2.0, self.mouse_delay + 0.1)
                 elif event.key == pygame.K_z:
                     self.mouse_delay = max(0.0, self.mouse_delay - 0.1)
+                elif event.key == pygame.K_e:
+                    self.circle_timeout = min(5.0, self.circle_timeout + 0.1)
+                elif event.key == pygame.K_d:
+                    self.circle_timeout = max(0.5, self.circle_timeout - 0.1)
                 elif event.key == pygame.K_r:
                     self.hits = 0
                     self.total_spawns = 0
@@ -90,7 +95,7 @@ class MouseSensitivityTester:
             self.next_spawn_delay = random.uniform(0.5, 2.5)
             self.total_spawns += 1
         
-        elif self.circle_pos and current_time - self.circle_spawn_time >= 2.0:
+        elif self.circle_pos and current_time - self.circle_spawn_time >= self.circle_timeout:
             self.circle_pos = None
     
     def draw(self):
@@ -106,6 +111,7 @@ class MouseSensitivityTester:
             settings_text = [
                 f"Circle Size: {self.circle_radius} (Q/A to change)",
                 f"Mouse Delay: {self.mouse_delay:.1f}s (W/Z to change)",
+                f"Circle Timeout: {self.circle_timeout:.1f}s (E/D to change)",
                 f"Hits: {self.hits}/{self.total_spawns} ({(self.hits/max(1,self.total_spawns)*100):.1f}%)",
                 "",
                 "Controls:",
@@ -113,6 +119,8 @@ class MouseSensitivityTester:
                 "A - Decrease circle size", 
                 "W - Increase mouse delay",
                 "Z - Decrease mouse delay",
+                "E - Increase circle timeout",
+                "D - Decrease circle timeout",
                 "S - Toggle settings",
                 "R - Reset stats",
                 "ESC - Exit"
