@@ -42,7 +42,7 @@ The program will launch in fullscreen mode. Click on the white circles as they a
 | `R` | Reset statistics |
 | `ESC` | Exit application |
 
-## Settings
+## Customizable Settings
 
 ### Mouse Delay
 - **Range**: 0.0 - 2.0 seconds
@@ -58,6 +58,7 @@ The program will launch in fullscreen mode. Click on the white circles as they a
 - **Range**: 0.5 - 5.0 seconds
 - **Default**: 2.0 seconds
 - **Purpose**: How long circles stay visible before disappearing
+
 
 ## How It Works
 
